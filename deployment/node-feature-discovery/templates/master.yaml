@@ -42,6 +42,8 @@ spec:
                 fieldPath: spec.nodeName
           command:
             - "nfd-master"
+            - "--resource-labels=gpu.intel.com/memory.max,gpu.intel.com/millicores"
+            - "--extra-label-ns=gpu.intel.com"
           resources:
             {{- toYaml .Values.master.resources | nindent 12 }}
           args:
